@@ -1,5 +1,5 @@
 module.exports = {
-    add_bin = async(options)=>{
-        console.log('Hello')
+    checkname : function(options){
+        return 'Hello'
     }
 }
