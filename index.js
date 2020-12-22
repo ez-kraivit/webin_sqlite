@@ -13,14 +13,15 @@
 const db = require('better-sqlite3')
 class webin_sqlite { 
     constructor() {
-        this.report = [];
+        this.report = report;
       }
     static show_columnname = (path,name)=>{
         const tablename = db(path).pragma("table_info('"+name+"')");
+        const ArrayText = []
         tablename.map((x)=>{
-            this.report.push(x.name) 
+            ArrayText.push(x.name) 
         });
-        return this.report
+        return ArrayText
     }
 }
 module.exports = webin_sqlite;

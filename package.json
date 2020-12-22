@@ -1,6 +1,6 @@
 {
   "name": "webin_sqlite",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "I want to make a library for myself. And I want to practice making it to others to use in the future as well.",
   "main": "index.js",
   "scripts": {
