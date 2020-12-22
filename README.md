@@ -1,4 +1,4 @@
-# webin_sqlite [![Build Status](https://github.com/ez-kraivit/webin_sqlite)](https://github.com/ez-kraivit/webin_sqlite) [![Build status](https://github.com/ez-kraivit/webin_sqlite)](https://github.com/ez-kraivit/webin_sqlite)
+# webin_sqlite 
 
 ## Installation
 
