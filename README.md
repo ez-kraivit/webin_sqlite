@@ -68,3 +68,39 @@ $ const data = [
     ]
 $ await sqlite.InsertAll('users',data)
 ```
+
+### ดูข้อมูล
+- QueryTableAll ดูตารางทั้งหมด
+```sh
+$ await sqlite.QueryTableAll()
+```
+
+- QueryTable ดูข้อมูลในตาราง
+```sh
+$ await sqlite.QueryTable('users')
+```
+
+- QueryAll ดูข้อมูลมากกว่า 1
+```sh
+$ await sqlite.QueryAll('users')
+```
+
+- QueryIndexAll ดูข้อมูลมากกว่า 1 โดยมีเงื่อนไข
+```sh
+$ await sqlite.QueryIndexAll('users',['username'],[`id=1`],true,['username'])
+```
+
+- QueryIndexGet ดูข้อมูล โดยมีเงื่อนไข
+```sh
+$ await sqlite.QueryIndexGet('users',['username'],[`id=1`])
+```
+
+- QueryCutomerGet ดูข้อมูลแบบเขียนรูปแบบเอง
+```sh
+$ await sqlite.QueryCutomerGet()
+```
+
+- QueryCutomerGet ดูข้อมูลแบบเขียนรูปแบบเองมากกว่า 1 
+```sh
+$ await sqlite.QueryCutomerGet()
+```
