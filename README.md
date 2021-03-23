@@ -1,8 +1,8 @@
 # Webin Sqlite Thailand
+[![standard-readme compliant](https://img.shields.io/badge/sqlite-1000-red)](https://github.com/ez-kraivit/webin_sqlite#readme) 
+[![standard-readme compliant](https://img.shields.io/badge/webin-thai-blue)](https://github.com/ez-kraivit/webin_sqlite#readme)
 
-[![standard-readme compliant](https://img.shields.io/badge/sqlite-1000-red)](https://github.com/ez-kraivit/webin_sqlite#readme)
-
-คำอธิบายเอกสารนี้ หากท่านเห็นว่าอยากให้มีการพัฒนาและปรับปรุงได้เลย
+คำอธิบายเอกสารนี้ หากท่านเห็นว่าอยากให้มีการพัฒนาและสามารถปรับปรุงได้เลย
 
 เอกสารอันนี้เป็นรูปแบบการ Format ตามความต้องการเพื่อให้ใช้งานได้เหมาะและเรียบง่ายที่สุด โดยจะมีการอัพเดทและพัฒนาในทิศทางการใช้งานให้มากยิ่งขึ้น ซึ่งหากมีอะไรอยากปรับปรุงหรือเพิ่มเติม สามารถเข้ามาร่วมพัฒนาเป็นส่วนหนึ่งร่วมกัน
 
