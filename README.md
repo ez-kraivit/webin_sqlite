@@ -104,3 +104,28 @@ $ await sqlite.QueryCutomerGet()
 ```sh
 $ await sqlite.QueryCutomerGet()
 ```
+
+### แก้ไขข้อมูล
+- UpdatedIndex การเพิ่มตาราง (รอพัฒนา)
+```sh
+$ await sqlite.UpdatedIndex('users',{"password":`123123123123`,"AGE":10},[`username = '1150'`])
+```
+
+
+### ลบข้อมูล
+- DeleteRowAll การเพิ่มตาราง
+```sh
+$ await sqlite.DeleteRowAll('users')
+```
+
+- DeleteIndex การเพิ่มข้อมูลในตาราง
+```sh
+$ await sqlite.DeleteIndex('users',[`username ='1112'`])
+```
+
+- DeleteTabel การเพิ่มข้อมูลในตารางมากกว่า 1
+```sh
+$ await sqlite.DeleteTabel('users')
+```
+
+ปล.รออัพเดทข้อมูลอีก ในการพัฒนาระบบ ท่านสามารถเป็นส่วนหนึ่งในการพัฒนาระบบได้เช่นกัน
