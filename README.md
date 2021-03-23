@@ -42,7 +42,6 @@ $ npm i webin_sqlite
 ```
 
 ## การใช้งาน
-This is only a documentation package. You can print out [spec.md](spec.md) to your console:
 ```sh
 $ const sqlite = require('../src/webin_sqlite')
 $ sqlite.init('./db/test.db')
@@ -74,10 +73,75 @@ $ await sqlite.InsertAll('users',data)
 ```sh
 $ await sqlite.QueryTableAll()
 ```
+ตัวอย่างในการแสดงผล
+```sh
+{
+  status: 'success',
+  schemas: [ 'history', 'users' ],
+  transaction_date: 2021-03-23T18:02:12.344Z
+}
+```
 
 - QueryTable ดูข้อมูลในตาราง
 ```sh
 $ await sqlite.QueryTable('users')
+```
+ตัวอย่างในการแสดงผล
+```sh
+{
+  table_info: [
+    {
+      cid: 0,
+      name: 'id',
+      type: 'INTEGER',
+      notnull: 0,
+      dflt_value: null,
+      pk: 1
+    },
+    {
+      cid: 1,
+      name: 'username',
+      type: 'TEXT',
+      notnull: 1,
+      dflt_value: null,
+      pk: 0
+    },
+    {
+      cid: 2,
+      name: 'password',
+      type: 'TEXT',
+      notnull: 1,
+      dflt_value: null,
+      pk: 0
+    },
+    {
+      cid: 3,
+      name: 'AGE',
+      type: 'INTEGER',
+      notnull: 0,
+      dflt_value: null,
+      pk: 0
+    },
+    {
+      cid: 4,
+      name: 'created_at',
+      type: 'TEXT',
+      notnull: 1,
+      dflt_value: null,
+      pk: 0
+    },
+    {
+      cid: 5,
+      name: 'updated_at',
+      type: 'TEXT',
+      notnull: 1,
+      dflt_value: null,
+      pk: 0
+    }
+  ],
+  table_columns: [ 'id', 'username', 'password', 'AGE', 'created_at', 'updated_at' ],
+  transaction_date: 2021-03-23T18:03:28.588Z
+}
 ```
 
 - QueryAll ดูข้อมูลมากกว่า 1

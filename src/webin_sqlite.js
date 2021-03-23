@@ -23,7 +23,6 @@ module.exports = class sqlite {
      * @returns 
      */
     static QueryTableAll = () => new Promise((resolve, reject) => {
-        console.log('Hello')
         try {
             const tablename = this.db.prepare("SELECT * FROM sqlite_schema").all()
             const ArrayText = []

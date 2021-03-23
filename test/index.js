@@ -60,7 +60,7 @@ const UpdatedIndex = async(name,data,index)=>{
 // QueryCutomerAll()
 // QueryCutomerGet()
 // QueryAll('users)
-// QueryTable('users')
+QueryTable('users')
 // QueryTableAll()
 // QueryIndexAll('users',['username'],[`id=1`],true,['username'])
 // QueryIndexGet('users',['username'],[`id=1`])
