@@ -14,7 +14,8 @@
 .idea/**/usage.statistics.xml
 .idea/**/dictionaries
 .idea/**/shelf
-node_modules/
+node_modules/*
+
 # Generated files
 .idea/**/contentModel.xml
 
