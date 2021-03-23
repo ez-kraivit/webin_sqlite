@@ -1,19 +1,70 @@
-# webin_sqlite 
+# Webin Sqlite Thailand
 
-## Installation
+[![standard-readme compliant](https://img.shields.io/badge/sqlite-1000-red)](https://github.com/ez-kraivit/webin_sqlite#readme)
 
-```bash
-npm install webin_sqlite
+คำอธิบายเอกสารนี้ หากท่านเห็นว่าอยากให้มีการพัฒนาและปรับปรุงได้เลย
+
+เอกสารอันนี้เป็นรูปแบบการ Format ตามความต้องการเพื่อให้ใช้งานได้เหมาะและเรียบง่ายที่สุด โดยจะมีการอัพเดทและพัฒนาในทิศทางการใช้งานให้มากยิ่งขึ้น ซึ่งหากมีอะไรอยากปรับปรุงหรือเพิ่มเติม สามารถเข้ามาร่วมพัฒนาเป็นส่วนหนึ่งร่วมกัน
+
+เหตุผลทำไมต้องออกแบ :
+
+1. ผู้พัฒนา พบว่าต้องการนำไปใช้กับ Lib อื่นในการต่อพวง และก็สะดวกต่อการใช้งานกับ Express and Hapi ตามความต้องการของผู้ออกแบบ
+2. ผู้พัฒนา มีเจตนาที่ดีในการพัฒนาระบบ และมุ่งหวังว่าอยากให้ระบบพัฒนาไปในทิศทางที่ใช้งานง่าย
+3. ผู้พัฒนา ต้องการสร้างผลงานในมุมมองการต่อยอดและการทำ Lib สำหรับคนไทยและถ่ายทอดต่อไปได้
+4. ผู้พัฒนา ต้องการพลังในการพัฒนาระบบร่วมกันโดย ต้องปรับปรุงไปในทิศทางที่ดียิ่งขึ้น
+
+จากการใช้งานแล้ว ยังไม่พบปัญหา ซึ่งการใช้งาน Sqlite ถูกนิยมใช้ร่วมกับ K8s เพียงเพื่อทำงานภายใต้ทีมงานและการทำงานภายใต้บริษัทที่ ทดสอบ Prototype ก่อนนำออกไปสู่ตลาด หรือ Demo ผลิตภัณฑ์ จนไปถึงการทำระบบบน Prod จริง ๆ ขึ้นมาในโครงงาน
+
+## คู่มือการใช้งาน
+
+- [ประวัติ](#hitosy)
+- [ติดตั้ง](#install)
+- [การใข้งาน](#usage)
+	- [เพิ่มข้อมูล](#insert)
+	- [ดูข้อมูล](#query)
+	- [แก้ไขข้อมูล](#edit)
+	- [ลบข้อมูล](#delete)
+
+
+## ประวัติ
+
+ผู้พัฒนา กำลังศึกษาชั้นปีที่ 4 แล้วมองเห็นว่าอยากทำฟังก์ชันที่แบ่งปัน ไอเดียและแนวคิดสำหรับผู้ที่ต้องการ การใช้งาน Lib ง่าย ๆ ซึ่งแนวคิดนี้ก็ถูกส่งต่อภายใต้การฝึกงานและสหกิจศึกษาในการทำ DB ด้วยการใช้ Sqlite ผู้พัฒนามองเห็นว่า การสร้างชุดข้อมูล 1 ล้านข้อมูล ใช้เวลาเพียง 20 วินาที ซึ่งลองทำระบบ Trigger และการทำ Realtime พบว่าหากใช้ CPU and Ram SSD ที่เพียงพอ สามารถทำระบบสเกล ผู้ใช้งานจำนวนมหาศาลได้ และผู้พัฒนากำลังทำวิจัยเกี่ยวกับการทำ Multi Sqlite ในการทำ Model AI Or การทำระบบที่ปลั๊กร่วมกับ NoSql ในการโอนย้ายข้อมูล จำนวนมหาศาลได้เช่นกัน ผู้พัฒนาเลยอยากชักชวนว่า การทำระบบด้วย nodejs ในการทำ sqlite การันตีว่าทำสเกลได้ ซึ่งผู้คาดหวังอาจจะต้องพัฒนาหลากหลายแขนงในการทำในเรื่องของ network ร่วมถึงการทำ Big O ด้วยเช่นกัน ขอขอบคุณที่เข้ามาร่วมเป็นส่วนหนึ่ง
+
+> นาย ไกรวิท มงคลสกุลฤทธิ์
+
+~ [Kraivit Mongkhonsakunrit](https://www.facebook.com/Creeksvit)
+
+
+## ติดตั้ง
+This project uses [node](http://nodejs.org) and [npm](https://npmjs.com). Go check them out if you don't have them locally installed.
+```sh
+$ npm i webin_sqlite
 ```
-## Usage
 
-```js
-const db = require('webin_sqlite')
-
-const members = db.show_columnname('hello.db','member')
-console.log(members);
+## การใช้งาน
+This is only a documentation package. You can print out [spec.md](spec.md) to your console:
+```sh
+$ const sqlite = require('../src/webin_sqlite')
+$ sqlite.init('./db/test.db')
 ```
 
-# License
+### เพิ่มข้อมูล
+- InsertTable การเพิ่มตาราง
+```sh
+$ await sqlite.InsertTable('history',{"username":"TEXT NOT NULL","detail":"TEXT NOT NULL","note":"TEXT NOT NULL"},true)
+```
 
-[MIT](./LICENSE)
+- InsertIndex การเพิ่มข้อมูลในตาราง
+```sh
+$ const data = {"username":"1191","password":"1191","AGE":13}
+$ await sqlite.InsertIndex('users',data)
+```
+
+- InsertAll การเพิ่มข้อมูลในตารางมากกว่า 1
+```sh
+$ const data = [
+        {"username":"1112","password":"1112","AGE":20},
+        {"username":"1150","password":"1150","AGE":13}
+    ]
+$ await sqlite.InsertAll('users',data)
+```

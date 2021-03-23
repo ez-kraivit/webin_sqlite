@@ -1,10 +1,10 @@
 {
   "name": "webin_sqlite",
-  "version": "1.0.12",
-  "description": "I want to make a library for myself. And I want to practice making it to others to use in the future as well.",
+  "version": "1.0.14",
+  "description": "Sqlite สำหรับภาษาไทย ออกแบบให้ใช้งานง่ายและเข้าใจการทำงาน โดยเวอร์ชั่น x.x.xx ตัวอักษรแรก สำหรับเวอร์ชั่นตัวเต็มที่ปล่อย ตัวอักษรสอง สำหรับเวอร์ชั่นอัพเกรด ตัวอักษรสุดท้าย สำหรับเวอร์ชั่น ปรับปรุง",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node test/index.js"
   },
   "repository": {
     "type": "git",
@@ -18,8 +18,17 @@
   "bugs": {
     "url": "https://github.com/ez-kraivit/webin_sqlite/issues"
   },
+  "keywords": [
+    "better-sqlite",
+    "sqlite",
+    "database",
+    "hapi"
+  ],
   "dependencies": {
     "better-sqlite3": "^7.1.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
   },
   "homepage": "https://github.com/ez-kraivit/webin_sqlite#readme"
 }
