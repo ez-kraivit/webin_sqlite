@@ -43,7 +43,7 @@ $ npm i webin_sqlite
 
 ## การใช้งาน
 ```sh
-$ const sqlite = require('../src/webin_sqlite')
+$ const sqlite = require('webin_sqlite')
 $ sqlite.init('./db/test.db')
 ```
 
@@ -170,14 +170,14 @@ $ await sqlite.QueryCutomerGet()
 ```
 
 ### แก้ไขข้อมูล
-- UpdatedIndex การแก้ไขตาราง (รอพัฒนา)
+- UpdatedIndex การแก้ไขตาราง
 ```sh
 $ await sqlite.UpdatedIndex('users',{"password":`123123123123`,"AGE":10},[`username = '1150'`])
 ```
 
 
 ### ลบข้อมูล
-- DeleteRowAll การลบตาราง
+- DeleteRowAll การลบข้อมูลในตารางมากกว่า 1 
 ```sh
 $ await sqlite.DeleteRowAll('users')
 ```
@@ -187,7 +187,7 @@ $ await sqlite.DeleteRowAll('users')
 $ await sqlite.DeleteIndex('users',[`username ='1112'`])
 ```
 
-- DeleteTabel การลบข้อมูลในตารางมากกว่า 1
+- DeleteTabel การลบตาราง
 ```sh
 $ await sqlite.DeleteTabel('users')
 ```
